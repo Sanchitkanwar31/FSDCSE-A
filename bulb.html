@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Bulb Toggle</title>
+    <style>
+        .bulb-container {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .bulb {
+            width: 50px;
+            height: 50px;
+        }
+        label {
+            margin-left: 10px;
+        }
+        #controls {
+            display: none; /* Hide controls initially */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Multiple Bulbs and Light Them</h1>
+    
+    <!-- Start button -->
+    <button id="startBtn">Start</button>
+    
+    <!-- Hidden controls for adding bulbs -->
+    <div id="controls">
+        <label for="numBulbs">Number of Bulbs to Add: </label>
+        <input type="number" id="numBulbs" min="1" value="1">
+        <button id="addBulbBtn">Add Bulbs</button>
+    </div>
+    
+    <div class="bulb-container" id="bulbContainer"></div>
+
+    <script src="sricpt1.js">
+    </script>
+</body>
+</html>
