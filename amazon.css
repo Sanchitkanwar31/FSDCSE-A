@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar .heading{
+    text-shadow: #febd69;
+    color: blue;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: #232f3e;
+    padding: 10px 20px;
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+}
+.navbar .logo img {
+    height: 40px;
+}
+.navbar .search-bar input {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    width: 300px;
+}
+.navbar .search-bar button {
+    padding: 8px 16px;
+    background-color: #febd69;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 4px;
+}
+
+.navbar .nav-links {
+    margin-left: auto;
+}
+.navbar .nav-links a {
+    margin-left: 20px;
+}
