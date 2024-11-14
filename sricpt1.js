@@ -3,22 +3,21 @@ const controls = document.getElementById('controls');
 const startBtn = document.getElementById('startBtn');
 const addBulbBtn = document.getElementById('addBulbBtn');
 
-// Show the controls when the Start button is clicked
 startBtn.addEventListener('click', function() {
-    controls.style.display = 'block'; // Show the controls
-    startBtn.style.display = 'none'; // Hide the Start button
+    controls.style.display = 'block';
+    startBtn.style.display = 'none'; // Hide start button
 });
 
 addBulbBtn.addEventListener('click', function() {
     const numBulbs = parseInt(document.getElementById('numBulbs').value);
 
-    // Clear previous bulbs
+    
     bulbContainer.innerHTML = '';
 
     // Loop to add the specified number of bulbs
     for (let i = 0; i < numBulbs; i++) {
         const bulbImage = document.createElement('img');
-        bulbImage.src = 'https://pics.clipartpng.com/Light_Bulb_PNG_Clip_Art-2102.png'; // Use the "off" bulb image
+        bulbImage.src = 'https://pics.clipartpng.com/Light_Bulb_PNG_Clip_Art-2102.png'; 
         bulbImage.classList.add('bulb');
 
         const checkbox = document.createElement('input');
@@ -26,9 +25,9 @@ addBulbBtn.addEventListener('click', function() {
 
         checkbox.addEventListener('change', function() {
             if (checkbox.checked) {
-                bulbImage.src = 'https://pics.clipartpng.com/midle/Yellow_Light_Bulb_PNG_Clip_Art-2108.png'; // Change to "on" bulb image
+                bulbImage.src = 'https://pics.clipartpng.com/midle/Yellow_Light_Bulb_PNG_Clip_Art-2108.png'; 
             } else {
-                bulbImage.src = 'https://pics.clipartpng.com/Light_Bulb_PNG_Clip_Art-2102.png'; // Change back to "off" bulb image
+                bulbImage.src = 'https://pics.clipartpng.com/Light_Bulb_PNG_Clip_Art-2102.png'; 
             }
         });
 
@@ -43,6 +42,6 @@ addBulbBtn.addEventListener('click', function() {
         bulbContainer.appendChild(bulbWrapper);
     }
 
-    // Hide the "Add Bulbs" button after adding bulbs
+   
     addBulbBtn.style.display = 'none';
 });
