@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Images with Checkboxes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            align-items: center;
+            background-color: aquamarine;
+        }
+
+        #imageContainer {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 3rem;
+            color: black;
+            margin-top: 20px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-shadow: 0 0 3px #FFFFFF;
+            font-weight: bold;
+        }
+
+        .image-item {
+            border: black 3px solid;
+        }
+
+        img {
+            width: 150px; 
+            height: auto; 
+        }
+
+        #inputContainer {
+            display: none;
+            text-align: center;
+        }
+
+        button {
+            background-color: #04AA6D; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px; /* Rounded corners */
+            transition-duration: 0.4s; /* Smooth transition for hover effect */
+        }
+
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h1 class="heading">Image Generator Assignment</h1>
+    <button id="startButton">Start</button>
+    <div id="inputContainer">
+        <input type="number" id="imageCount" placeholder="Enter number of images" min="1">
+        <button id="generateImages">Generate Images</button>
+    </div>
+    <div id="imageContainer"></div>
+
+    <script>
+        document.getElementById('startButton').addEventListener('click', function() {
+            document.getElementById('startButton').style.display = 'none';
+            document.getElementById('inputContainer').style.display = 'block';
+        });
+
+        document.getElementById('generateImages').addEventListener('click', function() {
+            const count = parseInt(document.getElementById('imageCount').value);
+            const container = document.getElementById('imageContainer');
+            
+            container.innerHTML = '';
+            document.getElementById('inputContainer').style.display = 'none';
+
+            for (let i = 0; i < count; i++) {
+                const imageItem = document.createElement('div');
+                imageItem.className = 'image-item';
+
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+
+                const img = document.createElement('img');
+                img.src = './image.png';
+                img.alt = 'Image ' + (i + 1);
+
+                checkbox.addEventListener('change', function() {
+                    if (checkbox.checked) {
+                        img.src = './q.png';
+                    } else {
+                        img.src = './image.png';
+                    }
+                });
+
+                imageItem.appendChild(checkbox);
+                imageItem.appendChild(img);
+                
+                container.appendChild(imageItem);
+            }
+        });
+    </script>
+</body>
+</html>
